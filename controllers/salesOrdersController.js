@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const SalesOrders = mongoose.model('salesOrders');
+const SalesOrders = mongoose.model('sales_orders');
 
 exports.getSalesOrders = async (req, res) => {
   try {

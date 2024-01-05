@@ -10,4 +10,4 @@ const salesOrdersSchema = new mongoose.Schema({
   delivery: { type: String },
 });
 
-module.exports = mongoose.model('salesOrders', salesOrdersSchema);
+module.exports = mongoose.model('sales_orders', salesOrdersSchema);
