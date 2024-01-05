@@ -19,14 +19,14 @@ app.use(express.json());
 app.options(
   ["/product/:id", "/product/delete/:id"],
   cors({
-    origin: "https://inventory-management-net.onrender.com",
+    origin: "https://im-frontend.onrender.com",
     methods: "PUT,DELETE",
     preflightContinue: true,
     optionsSuccessStatus: 200,
   })
 );
 
-const routes = require("./routes/productsRoutes");
+const routes = require("./routes/routes");
 app.use(routes);
 
 const PORT = 8080;
