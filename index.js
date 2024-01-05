@@ -3,8 +3,9 @@ const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config({ path: ".env" });
-require("./models/products");
 require("./models/categories");
+require("./models/products");
+require("./models/sales_orders");
 
 mongoose.connect(process.env.DATABASE, {
   useUnifiedTopology: true,
