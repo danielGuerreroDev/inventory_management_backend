@@ -2,4 +2,4 @@
 
 backend demo to be used in an inventory management system.
 
-Technologies : cors, express, mongoose.
+Technologies : node.js, cors, express, mongoose.
