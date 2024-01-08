@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config({ path: ".env" });
 require("./models/categories");
+require("./models/customers");
 require("./models/products");
 require("./models/sales_orders");
 

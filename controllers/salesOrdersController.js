@@ -18,10 +18,18 @@ exports.getSalesOrders = async (req, res) => {
                   foreignField: 'id',
                   as: 'product_details'
                 }
-              }
-            ]
-          }
-      }
+              },
+            ],
+          },
+      },
+      { $lookup:
+        {
+          from: 'customers',
+          localField: 'customer_id',
+          foreignField: 'id',
+          as: 'customer_details'
+        }
+      },
     ])
     res.send(salesOrders);
   } catch (err) {
