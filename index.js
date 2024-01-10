@@ -18,7 +18,7 @@ app.use(express.json());
 app.options(
   ["/product/:id", "/product/delete/:id", "/saleOrder/:id"],
   cors({
-    origin: ["https://im-frontend.onrender.com"],
+    origin: "https://im-frontend.onrender.com",
     methods: "PUT,DELETE",
     preflightContinue: true,
     optionsSuccessStatus: 200,
