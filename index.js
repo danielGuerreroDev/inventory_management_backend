@@ -19,7 +19,7 @@ mongoose.connection.on("error", (err) => {
 
 app.use(express.json());
 app.options(
-  ["/product/:id", "/product/delete/:id"],
+  ["/product/:id", "/product/delete/:id", "/updateSaleOrder/:id"],
   cors({
     origin: "https://im-frontend.onrender.com",
     methods: "PUT,DELETE",
