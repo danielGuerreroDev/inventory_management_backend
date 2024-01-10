@@ -36,3 +36,17 @@ exports.getSalesOrders = async (req, res) => {
     console.log(err);
   }
 };
+
+exports.updateSaleOrder = async (req, res, next) => {
+  try {
+    let saleOrderId = parseInt(req.params.id, 10);
+    const saleOrderSelected = await SalesOrders.findOne({ id: saleOrderId });
+    const saleOrderUpdated = await SalesOrders.findByIdAndUpdate(
+      { _id: saleOrderSelected._id },
+      { $set: req.body }
+    );
+    res.send(saleOrderUpdated);
+  } catch (err) {
+    console.log(err);
+  }
+};

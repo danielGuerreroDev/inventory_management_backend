@@ -16,5 +16,6 @@ router.get('/getProduct/:id', cors(), productsController.getSingleProduct);
 router.put('/product/:id', cors(), jsonParser, productsController.updateProduct);
 router.delete('/product/delete/:id', cors(), productsController.deleteProduct);
 router.get('/getSalesOrders', cors(), salesOrdersController.getSalesOrders);
+router.get('/updateSaleOrder/:id', cors(), salesOrdersController.updateSaleOrder);
 
 module.exports = router;
