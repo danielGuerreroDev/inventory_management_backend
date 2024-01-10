@@ -8,10 +8,7 @@ require("./models/customers");
 require("./models/products");
 require("./models/sales_orders");
 
-mongoose.connect(process.env.DATABASE, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
+mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise;
 mongoose.connection.on("error", (err) => {
   console.error("Database Connection Error");
