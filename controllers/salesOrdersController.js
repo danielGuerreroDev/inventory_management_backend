@@ -39,7 +39,6 @@ exports.getSalesOrders = async (req, res) => {
 
 exports.updateSaleOrder = async (req, res, next) => {
   try {
-    console.log(req.params)
     let saleOrderId = parseInt(req.params.id, 10);
     const saleOrderSelected = await SalesOrders.findOne({ id: saleOrderId });
     const saleOrderUpdated = await SalesOrders.findByIdAndUpdate(
