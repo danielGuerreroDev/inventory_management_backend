@@ -5,17 +5,19 @@ const bodyParser = require('body-parser');
 
 const jsonParser = bodyParser.json();
 
-const productsController = require('../controllers/productsController');
+const brandsController = require('../controllers/brandsController');
 const categoriesController = require('../controllers/categoriesController');
-const salesOrdersController = require('../controllers/salesOrdersController')
+const productsController = require('../controllers/productsController');
+const salesOrdersController = require('../controllers/salesOrdersController');
 
 router.get('/', cors(), productsController.baseRoute);
-router.get('/getProducts', cors(), productsController.getProducts);
+router.get('/getBrands', cors(), brandsController.getBrands);
 router.get('/getCategories', cors(), categoriesController.getCategories);
+router.get('/getProducts', cors(), productsController.getProducts);
 router.get('/getProduct/:id', cors(), productsController.getSingleProduct);
+router.get('/getSalesOrders', cors(), salesOrdersController.getSalesOrders);
 router.put('/product/:id', cors(), jsonParser, productsController.updateProduct);
 router.delete('/product/delete/:id', cors(), productsController.deleteProduct);
-router.get('/getSalesOrders', cors(), salesOrdersController.getSalesOrders);
 router.put('/saleOrder/:id', cors(), jsonParser, salesOrdersController.updateSaleOrder);
 
 module.exports = router;
