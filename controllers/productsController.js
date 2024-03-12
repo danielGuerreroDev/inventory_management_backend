@@ -3,12 +3,7 @@ const Products = mongoose.model("products");
 const path = require('node:path');
 
 exports.all = async (req, res) => {
-  res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-      console.log(err)
-    }
-  });
+  res.status(404).send('<h1>404! Page not found</h1>');
 };
 
 exports.baseRoute = async (req, res) => {
