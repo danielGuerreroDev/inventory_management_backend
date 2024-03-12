@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Products = mongoose.model("products");
+const path = require('node:path');
 
 exports.all = async (req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"), function (err) {
