@@ -10,7 +10,6 @@ const categoriesController = require('../controllers/categoriesController');
 const productsController = require('../controllers/productsController');
 const salesOrdersController = require('../controllers/salesOrdersController');
 
-router.get('/*', cors(), productsController.all);
 router.get('/', cors(), productsController.baseRoute);
 router.get('/getBrands', cors(), brandsController.getBrands);
 router.get('/getCategories', cors(), categoriesController.getCategories);
@@ -20,6 +19,8 @@ router.get('/getSalesOrders', cors(), salesOrdersController.getSalesOrders);
 router.put('/product/:id', cors(), jsonParser, productsController.updateProduct);
 router.delete('/product/delete/:id', cors(), productsController.deleteProduct);
 router.put('/saleOrder/:id', cors(), jsonParser, salesOrdersController.updateSaleOrder);
-
+router.all('*', (req, res) => { 
+  res.status(404).send('<h1>404! Page not found</h1>'); 
+}); 
 
 module.exports = router;

@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Products = mongoose.model("products");
 const path = require('node:path');
 
-exports.all = async (req, res) => {
-  res.status(404).send('<h1>404! Page not found</h1>');
-};
+// exports.all = async (req, res) => {
+//   res.status(404).send('<h1>404! Page not found</h1>');
+// };
 
 exports.baseRoute = async (req, res) => {
   res.send("Server Running");
